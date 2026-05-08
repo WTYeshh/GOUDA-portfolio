@@ -503,6 +503,7 @@
   z-index: 10;
 }
 
+@media (max-width: 768px) {
   .vision {
     padding: 8rem 1.5rem;
     display: flex;
