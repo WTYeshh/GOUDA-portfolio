@@ -349,8 +349,26 @@
   
   .photo-booth {
     border-radius: 20px;
+    max-width: 320px;
+    margin: 0 auto;
+    border-width: 4px;
+    border-bottom-width: 30px;
+  }
+  
+  .photo-booth-label {
+    bottom: -30px;
+    font-size: 0.9rem;
+  }
+
+  .about-text-side {
+    text-align: center;
+  }
+
+  .skill-tags {
+    justify-content: center;
   }
 }
+
 
 
 .urban-bio {
@@ -485,25 +503,35 @@
   z-index: 10;
 }
 
-@media (max-width: 768px) {
   .vision {
-    padding: 8rem 0;
+    padding: 8rem 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .vision-content {
+    width: 100%;
   }
   
   .vision-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    word-break: break-word;
+    text-align: center;
   }
   
   .vision-text {
-    font-size: 1rem;
-    margin-bottom: 2.5rem;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    text-align: center;
   }
   
   .film-marquee {
     padding: 0.8rem 0;
   }
 }
+
 
 
 .vision-content {

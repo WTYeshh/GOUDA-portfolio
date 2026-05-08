@@ -235,9 +235,9 @@ const Home = () => {
         <div className="vision-content">
           <motion.h2 
             className="vision-title"
-            style={{ y: y1 }}
+            style={{ y: useTransform(smoothProgress, [0.8, 1], [0, -50]) }}
           >
-            I don't just shoot videos. <br />
+            I don't just shoot videos.
             I capture the <span className="font-graffiti glitch-hover">Soul</span> of the streets.
           </motion.h2>
           <p className="vision-text">
