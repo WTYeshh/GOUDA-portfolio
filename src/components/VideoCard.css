@@ -1,0 +1,163 @@
+.video-card {
+  cursor: pointer;
+  perspective: 1000px;
+  height: fit-content;
+  align-self: start;
+}
+
+.video-card.vertical {
+  grid-row: span 2;
+}
+
+.ios-widget-card {
+  background: #333;
+  border-radius: 35px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ios-widget-card:hover {
+  background: #3a3a3a;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.widget-viewport {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: #111;
+  border-radius: 28px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.ios-widget-card.vertical .widget-viewport {
+  aspect-ratio: 9/16;
+}
+
+.widget-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ios-widget-card:hover .widget-img {
+  transform: scale(1);
+}
+
+.widget-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.ios-widget-card:hover .widget-overlay {
+  opacity: 1;
+}
+
+.widget-play-icon {
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.widget-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 5px 10px 10px;
+}
+
+.widget-title {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  opacity: 0.8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Modal Styles */
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(15px);
+}
+
+.modal-player-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modal-player-container.modal-vertical {
+  max-width: 450px;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: -50px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.modal-close-btn:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .video-modal {
+    padding: 1rem;
+  }
+
+  .modal-player-container {
+    gap: 10px;
+  }
+
+  .modal-close-btn {
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 50%;
+    z-index: 100;
+  }
+}

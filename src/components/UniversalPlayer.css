@@ -1,0 +1,202 @@
+.ios-player-container {
+  display: flex;
+  flex-direction: column;
+  background: #333; /* Dark iOS Grey */
+  border-radius: 40px;
+  padding: 12px;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  user-select: none;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.ios-player-container.is-vertical {
+  aspect-ratio: 9/16;
+}
+
+.ios-player-container.is-horizontal {
+  aspect-ratio: 16/9;
+}
+
+.video-viewport {
+  position: relative;
+  flex: 1;
+  background: #000;
+  border-radius: 32px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.viewport-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.center-play-icon {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.ios-controls-panel {
+  padding: 0 10px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.ios-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ios-device-name {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.ios-airplay-icon {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Seeker & Slider Styles */
+.ios-seeker-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ios-slider-container {
+  position: relative;
+  height: 4px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.ios-range-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.ios-custom-track {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ios-track-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #fff;
+  border-radius: 2px;
+}
+
+.ios-track-knob {
+  position: absolute;
+  top: 50%;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  pointer-events: none;
+}
+
+.ios-time-display {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Playback Controls */
+.ios-playback-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  margin: 5px 0;
+}
+
+.ios-control-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.1s ease;
+  color: #fff;
+}
+
+.ios-control-btn:active {
+  transform: scale(0.9);
+  opacity: 0.7;
+}
+
+.ios-control-btn.main {
+  width: 50px;
+  height: 50px;
+}
+
+/* Error State */
+.player-error {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+  border-radius: 40px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+  .ios-player-container {
+    border-radius: 30px;
+    padding: 10px;
+  }
+  
+  .video-viewport {
+    border-radius: 24px;
+    margin-bottom: 12px;
+  }
+  
+  .ios-playback-controls {
+    gap: 1.5rem;
+  }
+}

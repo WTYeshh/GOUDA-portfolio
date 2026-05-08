@@ -1,0 +1,125 @@
+.footer-wrapper {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.footer-pill {
+  width: 90%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 100px;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: var(--transition-smooth);
+}
+
+.footer-pill:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 62, 62, 0.2);
+  transform: translateY(-5px);
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-tagline {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--text-secondary);
+  font-weight: 700;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding-left: 2rem;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-nav a {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  transition: var(--transition-smooth);
+}
+
+.footer-nav a:hover {
+  color: var(--accent-color);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.footer-socials a:hover {
+  color: var(--text-primary);
+  transform: scale(1.1);
+}
+
+.admin-pill {
+  font-size: 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 12px;
+  border-radius: 20px;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  transition: var(--transition-smooth);
+}
+
+.admin-pill:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+.copyright-text {
+  font-size: 0.6rem;
+  color: var(--text-secondary);
+  opacity: 0.3;
+  letter-spacing: 0.1em;
+}
+
+@media (max-width: 992px) {
+  .footer-tagline {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-pill {
+    flex-direction: column;
+    padding: 2rem;
+    gap: 2rem;
+    border-radius: 30px;
+  }
+  
+  .footer-right {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .footer-nav {
+    gap: 1rem;
+  }
+}
