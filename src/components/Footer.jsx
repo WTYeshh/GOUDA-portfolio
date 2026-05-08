@@ -8,7 +8,7 @@ const Footer = () => {
     <footer className="footer-wrapper">
       <div className="footer-pill glass">
         <div className="footer-left">
-          <Link to="/" className="logo">
+          <Link to="/" className="logo" onClick={() => window.scrollTo(0, 0)}>
             GOUDA<span className="font-graffiti">VISUALS</span>
           </Link>
           <span className="footer-tagline">DIRECTOR • EDITOR • VISIONARY</span>
@@ -16,8 +16,8 @@ const Footer = () => {
         
         <div className="footer-right">
           <div className="footer-nav">
-            <Link to="/portfolio">WORK</Link>
-            <Link to="/contact">REACH ME</Link>
+            <Link to="/portfolio" onClick={() => window.scrollTo(0, 0)}>WORK</Link>
+            <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>REACH ME</Link>
           </div>
           <div className="footer-socials">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>

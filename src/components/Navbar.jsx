@@ -26,7 +26,7 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled glass' : ''}`}>
       <div className="container nav-container">
-        <Link to="/" className="logo">
+        <Link to="/" className="logo" onClick={() => window.scrollTo(0, 0)}>
           GOUDA<span className="font-graffiti">VISUALS</span>
         </Link>
 
@@ -36,6 +36,7 @@ const Navbar = () => {
               key={link.name} 
               to={link.path} 
               className={`nav-link ${location.pathname === link.path ? 'active' : ''}`}
+              onClick={() => window.scrollTo(0, 0)}
             >
               {link.name}
             </Link>
@@ -61,7 +62,10 @@ const Navbar = () => {
             <Link 
               key={link.name} 
               to={link.path} 
-              onClick={() => setIsOpen(false)}
+              onClick={() => {
+                setIsOpen(false);
+                window.scrollTo(0, 0);
+              }}
               className="nav-mobile-link"
             >
               {link.name}
