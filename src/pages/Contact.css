@@ -4,6 +4,14 @@
   min-height: 100vh;
 }
 
+@media (max-width: 768px) {
+  .contact-page {
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+  }
+}
+
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -16,6 +24,18 @@
   line-height: 1.1;
   margin-bottom: 2rem;
 }
+
+@media (max-width: 480px) {
+  .contact-info h1 {
+    font-size: 2.8rem;
+  }
+  
+  .contact-description {
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
 
 .contact-info h1 span {
   font-weight: 300;
@@ -179,6 +199,40 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   overflow: hidden;
   box-shadow: 0 50px 120px rgba(0, 0, 0, 1);
 }
+
+@media (max-width: 480px) {
+  .slate-modal {
+    max-width: 100%;
+  }
+  
+  .slate-body {
+    padding: 1.5rem 1.2rem;
+    gap: 1.2rem;
+  }
+  
+  .slate-value {
+    font-size: 1.4rem;
+  }
+  
+  .slate-id-text {
+    font-size: 1.2rem;
+  }
+  
+  .slate-main-id {
+    padding: 1rem 0.5rem;
+  }
+  
+  .slate-actions {
+    padding: 1.2rem;
+    grid-template-columns: 1fr;
+  }
+  
+  .slate-footer-details {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
 
 .slate-header {
   background: #111;

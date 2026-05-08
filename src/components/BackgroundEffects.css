@@ -24,6 +24,14 @@
   z-index: 1001;
 }
 
+@media (max-width: 768px) {
+  .grain-overlay {
+    opacity: 0.04; /* Reduce grain opacity on mobile for performance */
+    animation-duration: 12s;
+  }
+}
+
+
 @keyframes grain {
   0%, 100% { transform: translate(0, 0); }
   10% { transform: translate(-5%, -10%); }
@@ -134,12 +142,18 @@
   white-space: nowrap;
   opacity: 0.02;
   font-family: var(--font-main);
-  font-size: 15vw;
-  font-weight: 900;
   color: white;
   pointer-events: none;
   z-index: -5; /* Keep behind content */
 }
+
+@media (max-width: 768px) {
+  .bg-marquee {
+    font-size: 25vw;
+    bottom: 30%;
+  }
+}
+
 
 .marquee-inner {
   display: inline-block;
