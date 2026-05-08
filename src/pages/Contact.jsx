@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, MapPin, CheckCircle, Home, Instagram, Phone } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+import { Mail, MapPin, CheckCircle, Home, Phone } from 'lucide-react';
 import { FaInstagram } from 'react-icons/fa';
 import './Contact.css';
 
@@ -46,6 +47,31 @@ const Contact = () => {
       `--------------------------`;
 
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+
+    // --- EMAILJS INTEGRATION ---
+    // These params should match the variables in your EmailJS template (e.g. {{client_name}})
+    const templateParams = {
+      client_name: formData.name,
+      client_email: formData.email,
+      ticket_id: newTicketId,
+      shoot_type: formData.shootType,
+      date_range: `${formData.startDate} ${formData.endDate ? `to ${formData.endDate}` : ''}`,
+      notes: formData.message,
+      whatsapp_link: whatsappUrl
+    };
+
+    // Replace these strings with your actual EmailJS IDs after setting up your account
+    emailjs.send(
+      'YOUR_SERVICE_ID', 
+      'YOUR_TEMPLATE_ID', 
+      templateParams, 
+      'YOUR_PUBLIC_KEY'
+    ).then(() => {
+      console.log('SUCCESS: Notification email sent to client.');
+    }).catch((err) => {
+      console.error('FAILED: EmailJS error:', err);
+    });
+    // ---------------------------
 
     // Redirect to WhatsApp after 2 seconds
     setTimeout(() => {
@@ -237,7 +263,7 @@ const Contact = () => {
                 </div>
 
                 <div className="slate-footer-details">
-                  <div className="footer-item"><Instagram size={12}/> @goudavisuals</div>
+                  <div className="footer-item"><FaInstagram size={12}/> @goudavisuals</div>
                   <div className="footer-item"><Phone size={12}/> +91 88843 59993</div>
                   <div className="footer-item"><Mail size={12}/> gouda@visuals.in</div>
                 </div>
