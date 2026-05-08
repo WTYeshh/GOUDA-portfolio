@@ -240,9 +240,7 @@ const Home = () => {
             I don't just shoot videos.
             I capture the <span className="font-graffiti glitch-hover">Soul</span> of the streets.
           </motion.h2>
-          <p className="vision-text">
-            Based in Bangalore, I specialize in creating visual narratives that stand out. From the gritty urban landscapes to polished commercial sets, my lens is focused on authenticity and impact.
-          </p>
+
           <Link to="/contact" className="btn btn-primary">Start a Project</Link>
         </div>
         </section>

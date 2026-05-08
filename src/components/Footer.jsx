@@ -26,6 +26,10 @@ const Footer = () => {
           <Link to="/login" className="admin-pill">ADMIN</Link>
         </div>
       </div>
+      <div className="footer-location-row">
+        <span className="location-dot"></span>
+        <p className="footer-location">BASED IN BANGALORE • AVAILABLE WORLDWIDE</p>
+      </div>
       <p className="copyright-text">&copy; {new Date().getFullYear()} GOUDA VISUALS</p>
     </footer>
   );
