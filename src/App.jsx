@@ -7,11 +7,13 @@ import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import { Login, Admin } from './pages/AdminPages';
+import ScrollToTop from './components/ScrollToTop';
 import './styles/index.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="app">
         <BackgroundEffects />
         <Navbar />
